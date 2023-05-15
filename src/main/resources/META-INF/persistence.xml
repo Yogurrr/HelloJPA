@@ -11,7 +11,8 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>
-            <property name="hibernate.hbm2ddl_auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <!-- value에 create 라고 쓰면 테이블에 데이터가 추가되는 것이 아니라 매번 테이블을 삭제하고 새로 만듦 -->
         </properties>
     </persistence-unit>
 </persistence>
