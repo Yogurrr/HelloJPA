@@ -54,9 +54,9 @@ public class Employee {
     @JoinColumn(name="departments_id")
     private Long deptid;
 
-//    @ManyToOne   // 테이블 연관 관계 = 다 : 1
-//    @JoinColumn(name = "department_id")   // department 테이블의 id 컬럼과 조인
-//    private Department department;
+    @ManyToOne   // 테이블 연관 관계 = 다 : 1
+    @JoinColumn(name = "department_id")   // department 테이블의 id 컬럼과 조인
+    private Department department;
 
     @Override
     public String toString() {
