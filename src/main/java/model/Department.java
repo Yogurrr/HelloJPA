@@ -7,14 +7,14 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "departments")
+@Table(name = "department")
 @Data
-public class Departments {
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "DEPARTMENT_ID")
-    private Integer deptid;
+    private Long deptid;
 
     @Column(name = "DEPARTMENT_NAME")
     private String dname;

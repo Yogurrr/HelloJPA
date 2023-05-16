@@ -10,9 +10,9 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "employee")
 @Data
-public class Employees {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,4 +49,8 @@ public class Employees {
     @Column(name = "DEPARTMENT_ID")
     @JoinColumn(name="departments_id")
     private Long deptid;
+
+    @ManyToOne   // 테이블 연관 관계 = 다 : 1
+    @JoinColumn(name = "department_id")   // department 테이블의 id 컬럼과 조인
+    private Department department;
 }
