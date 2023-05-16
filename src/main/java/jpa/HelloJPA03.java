@@ -87,9 +87,9 @@ public class HelloJPA03 {
 
 
             // 이름, 직책, 연봉으로 사원 조회 : 동적 쿼리
-            String fname = "";
-            String jobid = "";
-            Integer sal = 0;   // null 체크를 위해 클래스형으로 선언
+            String fname = null;
+            String jobid = "IT_PROG";
+            Integer sal = 6000;   // null 체크를 위해 클래스형으로 선언
 
             jpql = " select e from Employee e";
             List<String> cndtns = new ArrayList<>();   // 조건절 저장 변수
