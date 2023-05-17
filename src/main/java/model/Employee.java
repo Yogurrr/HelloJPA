@@ -10,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "employee")
@@ -29,8 +30,10 @@ public class Employee {
     @Column(name = "LAST_NAME")
     private String lname;
 
+    @Basic
     @Column(name = "EMAIL")
     private String email;
+
 
     @Column(name = "PHONE_NUMBER")
     private String phone;
@@ -51,11 +54,10 @@ public class Employee {
     private Integer mgrid;
 
     @Column(name = "DEPARTMENT_ID")
-    @JoinColumn(name="departments_id")
     private Long deptid;
 
     @ManyToOne   // 테이블 연관 관계 = 다 : 1
-    @JoinColumn(name = "department_id")   // department 테이블의 id 컬럼과 조인
+    @JoinColumn(name = "department_id", insertable = false, updatable = false)   // department 테이블의 id 컬럼과 조인
     private Department department;
 
     @Override
