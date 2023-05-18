@@ -1,9 +1,11 @@
 package hbm;
 
+import model.Department;
 import model.Employee;
 import notmap.Empinfo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 import javax.persistence.EntityManager;
@@ -14,11 +16,8 @@ import java.util.Objects;
 
 public class HelloHbm04 {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-        EntityManager em = emf.createEntityManager();
-
-        Session session = em.unwrap(Session.class);
-        SessionFactory sf = session.getSessionFactory();
+        Configuration cfg = new Configuration().configure();
+        SessionFactory sf = cfg.addAnnotatedClass(Employee.class).addAnnotatedClass(Department.class).buildSessionFactory();
         Session sess = sf.openSession();
 
         try {
